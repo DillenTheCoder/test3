@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+    <img src="images/logo-normal.jpg" alt="Logo">
+    <p>ADMIN</p>
+</div>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginOverlay" class="overlay">
+    <div class="login-box">
+        <h2>Admin Login</h2>
+
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="PIN">
+
+        <button onclick="login()">Login</button>
+        <p id="error" class="error"></p>
+    </div>
+</div>
+
+
+<div class="admin-content">
+    <div class="admin-inner">
+        <div class="top-row">
+            <h2>Add Member:</h2>
+<span class="member-count">Amount Of Member: <b id="memberCount">0</b></span>
+
+        </div>
+<center>
+        <div class="form-grid">
+<input id="name" type="text" placeholder="Name">
+<input id="surname" type="text" placeholder="Surname">
+
+<input id="reference" type="text" placeholder="Reference">
+<input id="address" type="text" placeholder="Main Address">
+
+<input id="whatsapp" type="text" placeholder="Whatsapp">
+<input id="idNumber" type="text" placeholder="ID number">
+
+        </div>
+</center>        
+<center>
+        <div class="action-buttons">
+<button class="primary" onclick="addMember()">Add New Member</button>
+            <button class="secondary">View All Members</button>
+        </div>
+</center>        
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
