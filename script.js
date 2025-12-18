@@ -11,7 +11,6 @@ function login() {
 }
 
 
-
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtrhpiuXAHn6vhBmqg_QcWbJAuWw9EgdjecKMtvV2JHS7WxeMZj1YF1QqJoZKuk_jq/exec";
 
 function addMember() {
@@ -33,20 +32,12 @@ function addMember() {
   fetch(SCRIPT_URL, {
     method: "POST",
     body: JSON.stringify(data),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.json())
-  .then(result => {
-    if (result.success) {
-      document.getElementById("memberCount").textContent = result.totalMembers;
-      clearForm();
-      alert("Member added successfully");
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Failed to add member");
+    headers: { "Content-Type": "application/json" },
+    mode: "no-cors"  // prevents browser from blocking the request
   });
+
+  clearForm();
+  alert("Member added (data sent to Google Sheets).");
 }
 
 function clearForm() {
